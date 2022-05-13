@@ -15,7 +15,7 @@
 
 ### Project Concept
 
--NFTs are unique digital tokens stored on the blockchain. Once they are created on the blockchain, they can be sold to customers digitally. Customers then store NFTs in a secure wallet that can be accessed on any device.
+- NFTs are unique digital tokens stored on the blockchain. Once they are created on the blockchain, they can be sold to customers digitally. Customers then store NFTs in a secure wallet that can be accessed on any device.
 In the ticketing system, event organizers can mint the required number of NFT tickets on their choice of a blockchain platform. They can code the NFTs to set a sale price or run the sale as an auction where people can start a bid for tickets
 
 ### Tools
