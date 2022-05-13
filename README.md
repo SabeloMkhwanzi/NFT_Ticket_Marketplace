@@ -24,7 +24,7 @@ In the ticketing system, event organizers can mint the required number of NFT ti
 - Frontend: [Chakra-ui](https://chakra-ui.com/) - Create accessible React apps with speed
 - Smart Contract Framework: [Hardhat]() - 
 - Nft Storage: [IFPF/Filecoin]() - 
-- Dex Interface: [Uniswap Labs Widgets](https://docs.uniswap.org/sdk/widgets/swap-widget) - Getting Started with the Swap Uniswap Widget.
+- Blockchain: [Polygon Test]() - .
 - HTTPS and WebSocket Provider: [Infura](https://docs.infura.io/infura/networks/ethereum) - guide on how to use the most versatile blockchain developer platform.
 - Wallet connection: [Wagmi](https://wagmi-xyz.vercel.app/) - is a React Hooks library for Ethereum, built on ethers.js.
 - Hosting platform: [Fleek.co]() - 
