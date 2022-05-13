@@ -25,7 +25,7 @@ In the ticketing system, event organizers can mint the required number of NFT ti
 - Smart Contract Framework: [Hardhat]() - 
 - Nft Storage: [IFPF/Filecoin]() - 
 - Blockchain: [Polygon Test]() - .
-- HTTPS and WebSocket Provider: [Infura](https://docs.infura.io/infura/networks/ethereum) - guide on how to use the most versatile blockchain developer platform.
+- IPFS gateway: [Infura](https://docs.infura.io/infura/networks/ethereum) - guide on how to use the most versatile blockchain developer platform.
 - Wallet connection: [Wagmi](https://wagmi-xyz.vercel.app/) - is a React Hooks library for Ethereum, built on ethers.js.
 - Hosting platform: [Fleek.co]() - 
 
