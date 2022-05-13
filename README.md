@@ -1,6 +1,6 @@
-### L2 ROLLATHON - Best use of IPFS and/or Filecoin in your L2 project
+## L2 ROLLATHON - Best use of IPFS and/or Filecoin in your L2 project
 
-
+### Challenge Description
 #### Projects that use IPFS for content-addressing and/or Filecoin for decentralized, persistent storage. (Submissions that use either technology indirectly via NFT.storage, web3.storage, Estuary.tech, Textile, or other tooling also qualify). All types of projects are welcome and we welcome your creativity. Feel free to browse past winners here for inspiration.
 
 <!-- [link to hackathon](https://gitcoin.co/issue/ipfs-and-filecoin/hackathons-bounties/6/100028834) -->
