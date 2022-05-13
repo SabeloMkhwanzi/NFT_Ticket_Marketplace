@@ -11,7 +11,7 @@
 
 - The NFT Ticketing Marketplace upload the ticket on the IPFS. Hash is calculated by IPFS and tickets get stored on the database. NFT tickets are created and uploaded to the requested NFT marketplace.
 
-Ticket owners can also resell NFT tickets on the NFT marketplace. The ticket is stored in a smart contract. Once a buyer buys the ticket, the smart contract triggers and the payment is sent to the seller automatically..
+- Ticket owners can also resell NFT tickets on the NFT marketplace. The ticket is stored in a smart contract. Once a buyer buys the ticket, the smart contract triggers and the payment is sent to the seller automatically..
 
 ### Project Concept
 
