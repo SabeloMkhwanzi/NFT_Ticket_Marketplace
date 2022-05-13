@@ -22,6 +22,7 @@ In the ticketing system, event organizers can mint the required number of NFT ti
 
 - Building Framework: [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
 - Frontend: [Chakra-ui](https://chakra-ui.com/) - Create accessible React apps with speed
+- Smart Contract Framework: [Hardhat]() - 
 - Nft Storage: [IFPF/Filecoin]() - 
 - Dex Interface: [Uniswap Labs Widgets](https://docs.uniswap.org/sdk/widgets/swap-widget) - Getting Started with the Swap Uniswap Widget.
 - HTTPS and WebSocket Provider: [Infura](https://docs.infura.io/infura/networks/ethereum) - guide on how to use the most versatile blockchain developer platform.
@@ -48,6 +49,22 @@ In the ticketing system, event organizers can mint the required number of NFT ti
 #### Project Start: Date: 13 May, 2022
 
 #### Wallet Address : 0xF975206a46b4eD9f5F008AF9813B19bf083d94eE
+
+#### Basic Sample Hardhat Setup
+
+This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, a sample script that deploys that contract, and an example of a task implementation, which simply lists the available accounts.
+
+Try running some of the following tasks:
+
+```shell
+npx hardhat accounts
+npx hardhat compile
+npx hardhat clean
+npx hardhat test
+npx hardhat node
+node scripts/sample-script.js
+npx hardhat help
+```
 
 #### Running the app
 
