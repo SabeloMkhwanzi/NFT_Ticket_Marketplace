@@ -1,9 +1,9 @@
 ### L2 ROLLATHON - Best use of IPFS and/or Filecoin in your L2 project
 
 
-### TProjects that use IPFS for content-addressing and/or Filecoin for decentralized, persistent storage. (Submissions that use either technology indirectly via NFT.storage, web3.storage, Estuary.tech, Textile, or other tooling also qualify). All types of projects are welcome and we welcome your creativity. Feel free to browse past winners here for inspiration.
+#### Projects that use IPFS for content-addressing and/or Filecoin for decentralized, persistent storage. (Submissions that use either technology indirectly via NFT.storage, web3.storage, Estuary.tech, Textile, or other tooling also qualify). All types of projects are welcome and we welcome your creativity. Feel free to browse past winners here for inspiration.
 
-<!-- [HERE](https://gitcoin.co/issue/transak/transak-sdk/11/100028820) -->
+<!-- [link to hackathon](https://gitcoin.co/issue/ipfs-and-filecoin/hackathons-bounties/6/100028834) -->
 
 ### TicketVast - NFT Ticketing Marketplace
 
