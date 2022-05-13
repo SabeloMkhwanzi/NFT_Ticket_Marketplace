@@ -72,12 +72,6 @@ Create a .env file in the root folder and populate it with the following variabl
 ```
 
 INFURA_ID=
-REACT_APP_RPC_ENDPOINT=
-API_KEY=
-REACT_APP_TRANSAK=
-ALCHEMY_ID=
-
-
 REACT_APP_CLIENT_ID=
 REACT_APP_REDIRECT_URI=
 
