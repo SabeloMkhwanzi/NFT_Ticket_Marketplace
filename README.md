@@ -1,27 +1,11 @@
 ## L2 ROLLATHON - Best use of IPFS and/or Filecoin in your L2 project
 
-<<<<<<< HEAD
 #### Basic Sample Hardhat Setup
 
 This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, a sample script that deploys that contract, and an example of a task implementation, which simply lists the available accounts.
 
-Try running some of the following tasks:
-
-```shell
-npx hardhat accounts
-npx hardhat compile
-npx hardhat clean
-npx hardhat test
-npx hardhat node
-node scripts/sample-script.js
-npx hardhat help
-```
-
-## Getting Started
-=======
 ### Challenge Description
 #### Projects that use IPFS for content-addressing and/or Filecoin for decentralized, persistent storage. (Submissions that use either technology indirectly via NFT.storage, web3.storage, Estuary.tech, Textile, or other tooling also qualify). All types of projects are welcome and we welcome your creativity. Feel free to browse past winners here for inspiration.
->>>>>>> ae19c2b83de6e5e243be0f7c7022c72189d2fd48
 
 <!-- [link to hackathon](https://gitcoin.co/issue/ipfs-and-filecoin/hackathons-bounties/6/100028834) -->
 
@@ -74,18 +58,6 @@ In the ticketing system, event organizers can mint the required number of NFT ti
 
 This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, a sample script that deploys that contract, and an example of a task implementation, which simply lists the available accounts.
 
-Try running some of the following tasks:
-
-```shell
-npx hardhat accounts
-npx hardhat compile
-npx hardhat clean
-npx hardhat test
-npx hardhat node
-node scripts/sample-script.js
-npx hardhat help
-```
-
 #### Running the app
 
 ### Getting Started
@@ -124,10 +96,4 @@ yarn dev
 
 Happy Hacking!😊
 
-<<<<<<< HEAD
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-
-# NFT_Ticket_Marketplace
-=======
-##    TicketVast - NFT Ticket Marketplace
->>>>>>> ae19c2b83de6e5e243be0f7c7022c72189d2fd48
+## TicketVast - NFT Ticket Marketplace
