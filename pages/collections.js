@@ -1,10 +1,8 @@
-/* pages/dashboard.js */
 /* eslint-disable react-hooks/rules-of-hooks */
 import { ethers } from "ethers";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Web3Modal from "web3modal";
-
 import {
   SimpleGrid,
   Flex,
@@ -18,16 +16,18 @@ import {
 import PillPity from "pill-pity";
 import Head from "next/head";
 
-import { marketplaceAddress } from "../config";
+import { nftmarketaddress, nftaddress } from "../config";
 
-import NFTMarketplace from "../artifacts/contracts/NFTMarketplace.sol/NFTMarketplace.json";
+import Market from "../artifacts/contracts/NFTMarket.sol/NFTMarket.json";
+import NFT from "../artifacts/contracts/NFT.sol/NFT.json";
 
-export default function CreatorDashboard() {
+export default function MyAssets() {
   const [nfts, setNfts] = useState([]);
   const [loadingState, setLoadingState] = useState("not-loaded");
   useEffect(() => {
     loadNFTs();
   }, []);
+
   async function loadNFTs() {
     const web3Modal = new Web3Modal({
       network: "mainnet",
@@ -37,16 +37,17 @@ export default function CreatorDashboard() {
     const provider = new ethers.providers.Web3Provider(connection);
     const signer = provider.getSigner();
 
-    const contract = new ethers.Contract(
-      marketplaceAddress,
-      NFTMarketplace.abi,
+    const marketContract = new ethers.Contract(
+      nftmarketaddress,
+      Market.abi,
       signer
     );
-    const data = await contract.fetchItemsListed();
+    const tokenContract = new ethers.Contract(nftaddress, NFT.abi, provider);
+    const data = await marketContract.fetchMyNFTs();
 
     const items = await Promise.all(
       data.map(async (i) => {
-        const tokenUri = await contract.tokenURI(i.tokenId);
+        const tokenUri = await tokenContract.tokenURI(i.tokenId);
         const meta = await axios.get(tokenUri);
         let price = ethers.utils.formatUnits(i.price.toString(), "ether");
         let item = {
@@ -55,15 +56,15 @@ export default function CreatorDashboard() {
           seller: i.seller,
           owner: i.owner,
           image: meta.data.image,
+          name: meta.name,
+          description: meta.data.description,
         };
         return item;
       })
     );
-
     setNfts(items);
     setLoadingState("loaded");
   }
-
   if (loadingState === "loaded" && !nfts.length)
     return (
       <Heading
@@ -79,7 +80,7 @@ export default function CreatorDashboard() {
   return (
     <div>
       <Head>
-        <title>Resell items</title>
+        <title>Collectibles</title>
       </Head>
       <PillPity pattern="glamorous" width="100%" height="100%">
         <Heading

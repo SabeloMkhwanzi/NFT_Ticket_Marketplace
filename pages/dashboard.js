@@ -1,4 +1,3 @@
-/* pages/my-nfts.js */
 /* eslint-disable react-hooks/rules-of-hooks */
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable jsx-a11y/alt-text */
@@ -6,9 +5,6 @@ import { ethers } from "ethers";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Web3Modal from "web3modal";
-import { useRouter } from "next/router";
-import Head from "next/head";
-
 import {
   SimpleGrid,
   Flex,
@@ -20,15 +16,17 @@ import {
   Divider,
 } from "@chakra-ui/react";
 import PillPity from "pill-pity";
+import Head from "next/head";
 
-import { marketplaceAddress } from "../config";
+import { nftmarketaddress, nftaddress } from "../config";
 
-import NFTMarketplace from "../artifacts/contracts/NFTMarketplace.sol/NFTMarketplace.json";
+import Market from "../artifacts/contracts/NFTMarket.sol/NFTMarket.json";
+import NFT from "../artifacts/contracts/NFT.sol/NFT.json";
 
-export default function MyAssets() {
+export default function CreatorDashboard() {
   const [nfts, setNfts] = useState([]);
+  const [sold, setSold] = useState([]);
   const [loadingState, setLoadingState] = useState("not-loaded");
-  const router = useRouter();
   useEffect(() => {
     loadNFTs();
   }, []);
@@ -41,34 +39,37 @@ export default function MyAssets() {
     const provider = new ethers.providers.Web3Provider(connection);
     const signer = provider.getSigner();
 
-    const marketplaceContract = new ethers.Contract(
-      marketplaceAddress,
-      NFTMarketplace.abi,
+    const marketContract = new ethers.Contract(
+      nftmarketaddress,
+      Market.abi,
       signer
     );
-    const data = await marketplaceContract.fetchMyNFTs();
+    const tokenContract = new ethers.Contract(nftaddress, NFT.abi, provider);
+    const data = await marketContract.fetchItemsCreated();
 
     const items = await Promise.all(
       data.map(async (i) => {
-        const tokenURI = await marketplaceContract.tokenURI(i.tokenId);
-        const meta = await axios.get(tokenURI);
+        const tokenUri = await tokenContract.tokenURI(i.tokenId);
+        const meta = await axios.get(tokenUri);
         let price = ethers.utils.formatUnits(i.price.toString(), "ether");
         let item = {
           price,
           tokenId: i.tokenId.toNumber(),
           seller: i.seller,
           owner: i.owner,
+          sold: i.sold,
           image: meta.data.image,
-          tokenURI,
+          name: meta.data.name,
+          description: meta.description,
         };
         return item;
       })
     );
+    /* create a filtered array of items that have been sold */
+    const soldItems = items.filter((i) => i.sold);
+    setSold(soldItems);
     setNfts(items);
     setLoadingState("loaded");
-  }
-  function listNFT(nft) {
-    router.push(`/resell-nft?id=${nft.tokenId}&tokenURI=${nft.tokenURI}`);
   }
   if (loadingState === "loaded" && !nfts.length)
     return <h1 className="py-10 px-20 text-3xl">No assets created</h1>;
@@ -156,7 +157,7 @@ export default function MyAssets() {
           ))}
         </SimpleGrid>
 
-        {/* <Divider orientation="horizontal" color="black" />
+        <Divider orientation="horizontal" color="black" />
         {Boolean(sold.length) && (
           <>
             <Heading
@@ -248,7 +249,7 @@ export default function MyAssets() {
               ))}
             </SimpleGrid>
           </>
-        )} */}
+        )}
       </PillPity>
     </div>
   );

@@ -1,8 +1,11 @@
+/* eslint-disable react/jsx-no-duplicate-props */
 /* eslint-disable react-hooks/rules-of-hooks */
+/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable @next/next/no-img-element */
 import { ethers } from "ethers";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import Web3Modal from "web3modal";
+import Web3Modal, { connectors } from "web3modal";
 import {
   SimpleGrid,
   Flex,
@@ -16,13 +19,14 @@ import {
 import PillPity from "pill-pity";
 import Head from "next/head";
 
-import { marketplaceAddress } from "../config";
-
-import NFTMarketplace from "../artifacts/contracts/NFTMarketplace.sol/NFTMarketplace.json";
+import { nftaddress, nftmarketaddress } from "../config";
+import NFT from "../artifacts/contracts/NFT.sol/NFT.json";
+import Market from "../artifacts/contracts/NFTMarket.sol/NFTMarket.json";
 
 import Hero from "../components/hero.tsx";
 
 export default function Home() {
+  const BodyBgColor = useColorModeValue("#FFF8D5", "gray.600");
   const [nfts, setNfts] = useState([]);
   const [loadingState, setLoadingState] = useState("not-loaded");
   useEffect(() => {
@@ -30,13 +34,16 @@ export default function Home() {
   }, []);
   async function loadNFTs() {
     /* create a generic provider and query for unsold market items */
-    const provider = new ethers.providers.JsonRpcProvider();
-    const contract = new ethers.Contract(
-      marketplaceAddress,
-      NFTMarketplace.abi,
+    const provider = new ethers.providers.JsonRpcProvider(
+      "https://polygon-mumbai.infura.io/v3/e2a657a09d56489e8d5eb38815ec1b58"
+    );
+    const tokenContract = new ethers.Contract(nftaddress, NFT.abi, provider);
+    const marketContract = new ethers.Contract(
+      nftmarketaddress,
+      Market.abi,
       provider
     );
-    const data = await contract.fetchMarketItems();
+    const data = await marketContract.fetchMarketItems();
 
     /*
      *  map over items returned from smart contract and format
@@ -44,7 +51,7 @@ export default function Home() {
      */
     const items = await Promise.all(
       data.map(async (i) => {
-        const tokenUri = await contract.tokenURI(i.tokenId);
+        const tokenUri = await tokenContract.tokenURI(i.tokenId);
         const meta = await axios.get(tokenUri);
         let price = ethers.utils.formatUnits(i.price.toString(), "ether");
         let item = {
@@ -62,24 +69,23 @@ export default function Home() {
     setNfts(items);
     setLoadingState("loaded");
   }
-
   async function buyNft(nft) {
     /* needs the user to sign the transaction, so will use Web3Provider and sign it */
     const web3Modal = new Web3Modal();
     const connection = await web3Modal.connect();
     const provider = new ethers.providers.Web3Provider(connection);
     const signer = provider.getSigner();
-    const contract = new ethers.Contract(
-      marketplaceAddress,
-      NFTMarketplace.abi,
-      signer
-    );
+    const contract = new ethers.Contract(nftmarketaddress, Market.abi, signer);
 
-    /* user will be prompted to pay the asking proces to complete the transaction */
+    /* user will be prompted to pay the asking process to complete the transaction */
     const price = ethers.utils.parseUnits(nft.price.toString(), "ether");
-    const transaction = await contract.createMarketSale(nft.tokenId, {
-      value: price,
-    });
+    const transaction = await contract.createMarketSale(
+      nftaddress,
+      nft.tokenId,
+      {
+        value: price,
+      }
+    );
     await transaction.wait();
     loadNFTs();
   }
@@ -96,7 +102,7 @@ export default function Home() {
       </Head>
       <>
         <Hero />
-        <PillPity pattern="glamorous" width="100%">
+        <PillPity pattern="glamorous" width="100%" bg={BodyBgColor}>
           <Heading
             fontSize={{ base: "3xl", md: "4xl", lg: "5xl" }}
             color={useColorModeValue("gray.800", "white")}
