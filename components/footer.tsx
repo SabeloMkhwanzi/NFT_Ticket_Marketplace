@@ -83,7 +83,7 @@ export default function SmallCentered() {
             color={useColorModeValue("purple.600", "white")}
             href={"sell"}
           >
-            Sell Tickets
+            Create Tickets
           </Link>
           <Link
             fontSize="lg"

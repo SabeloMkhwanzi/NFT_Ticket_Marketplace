@@ -16,6 +16,7 @@ export default function SplitScreen() {
   const SubHeaderTextColor = useColorModeValue("gray.600", "white");
   const ButtonColorMode = useColorModeValue("#B4ECE3", "#B4ECE3");
   const ButtonTextColor = useColorModeValue("#8479E1", "black");
+  const HeaderTextColor = useColorModeValue("#733C3C", "#B4ECE3");
 
   return (
     <Stack
@@ -44,8 +45,8 @@ export default function SplitScreen() {
             >
               NFT Ticketing
             </Text>
-            <br />{" "}
-            <Text fontFamily="cursive" color={"#733C3C"} as={"span"}>
+            <br />
+            <Text fontFamily="cursive" color={HeaderTextColor} as={"span"}>
               MarketPlace
             </Text>{" "}
           </Heading>

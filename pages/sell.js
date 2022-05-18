@@ -30,6 +30,8 @@ import {
 
 export default function CreateItem() {
   const BodyBgColor = useColorModeValue("#FFF8D5", "gray.600");
+  const HeaderTextColor = useColorModeValue("black", "#B4ECE3");
+  const ParagraphTextColor = useColorModeValue("gray.600", "white");
 
   const [fileUrl, setFileUrl] = useState(null);
   const [formInput, updateFormInput] = useState({
@@ -100,9 +102,9 @@ export default function CreateItem() {
   return (
     <>
       <Head>
-        <title>Sell Ticket</title>
+        <title>Create Ticket</title>
       </Head>
-      <Box position={"relative"}>
+      <Box position={"relative"} bg={BodyBgColor}>
         <Container
           bg={BodyBgColor}
           as={SimpleGrid}
@@ -115,8 +117,9 @@ export default function CreateItem() {
             <Heading
               lineHeight={1.1}
               fontSize={{ base: "3xl", sm: "4xl", md: "5xl", lg: "6xl" }}
+              color={HeaderTextColor}
             >
-              NFT Ticketing Reduce costs{" "}
+              Using NFT to Sell Tickets could Reduce costs{" "}
               <Text
                 as={"span"}
                 bgGradient="linear(to-r, red.400,pink.400)"
@@ -124,11 +127,11 @@ export default function CreateItem() {
               >
                 &
               </Text>{" "}
-              Preventing fake tickets and scams
+              Prevents Fake Tickets and Scams
             </Heading>
           </Stack>
           <Stack
-            bg={"gray.50"}
+            bg={BodyBgColor}
             rounded={"xl"}
             p={{ base: 4, sm: 6, md: 8 }}
             spacing={{ base: 8 }}
@@ -136,34 +139,39 @@ export default function CreateItem() {
           >
             <Stack spacing={4}>
               <Heading
-                color={"gray.800"}
                 lineHeight={1.1}
                 fontSize={{ base: "2xl", sm: "3xl", md: "4xl" }}
+                color={HeaderTextColor}
               >
-                Quick production
+                Quick Production
                 <Text
                   as={"span"}
                   bgGradient="linear(to-r, red.400,pink.400)"
                   bgClip="text"
+                  color={HeaderTextColor}
                 >
                   !
                 </Text>
               </Heading>
-              <Text color={"gray.500"} fontSize={{ base: "sm", sm: "md" }}>
+              <Text
+                color={ParagraphTextColor}
+                fontSize={{ base: "sm", sm: "md" }}
+              >
                 NFT-based tickets act as programmable money, providing unlimited
                 potential for new revenue opportunities. An NFT can be minted
                 and ready to sell in less than a minute.
                 <br />
                 <br />
-                <Text as="mark">
-                  NB: ALL TRANSACTION TAKES 10 - 15 SECONDS TO VERIFY!
+                <Text color="red" as="mark" textTransform="uppercase">
+                  NB: make sure you`re connected to Polygon testnet
                 </Text>
               </Text>
             </Stack>
             <Box as={"form"} mt={10}>
               <Stack spacing={4}>
                 <Input
-                  placeholder="Enter Event Name"
+                  type="text"
+                  placeholder="Event Name"
                   bg={"gray.100"}
                   border={0}
                   color={"gray.500"}
@@ -175,7 +183,8 @@ export default function CreateItem() {
                   }
                 />
                 <Input
-                  placeholder="Enter Event Location-date-time"
+                  type="text"
+                  placeholder="Event Location date time"
                   bg={"gray.100"}
                   border={0}
                   color={"gray.500"}
@@ -190,7 +199,8 @@ export default function CreateItem() {
                   }
                 />
                 <Input
-                  placeholder="Enter amount in Matic"
+                  type="number"
+                  placeholder="Amount in Matic"
                   bg={"gray.100"}
                   border={0}
                   color={"gray.500"}

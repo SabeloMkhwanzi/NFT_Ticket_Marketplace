@@ -78,10 +78,9 @@ export default function withAction() {
               <Stack direction={"row"} spacing={12} ml="60%">
                 <Link
                   py={3}
-                  fontSize="lg"
+                  fontSize="md"
                   textTransform="uppercase"
                   fontWeight="normal"
-                  as="kbd"
                   letterSpacing={2}
                   _hover={{
                     textDecorationColor: "red.300",
@@ -92,10 +91,9 @@ export default function withAction() {
                 </Link>
                 <Link
                   py={3}
-                  fontSize="lg"
+                  fontSize="md"
                   textTransform="uppercase"
                   fontWeight="normal"
-                  as="kbd"
                   letterSpacing={1}
                   href={"sell"}
                 >
@@ -103,25 +101,23 @@ export default function withAction() {
                 </Link>
                 <Link
                   py={3}
-                  fontSize="lg"
+                  fontSize="md"
                   textTransform="uppercase"
                   fontWeight="normal"
-                  as="kbd"
                   letterSpacing={2}
-                  href={"collections"}
+                  href={"collection"}
                 >
                   Collectibles
                 </Link>
                 <Link
                   py={3}
-                  fontSize="lg"
+                  fontSize="md"
                   textTransform="uppercase"
                   fontWeight="normal"
-                  as="kbd"
                   letterSpacing={2}
-                  href={"dashboard"}
+                  href={"myassets"}
                 >
-                  Dashboard
+                  My Assets
                 </Link>
               </Stack>
             </HStack>
@@ -139,23 +135,21 @@ export default function withAction() {
               <Link
                 px={2}
                 py={1}
-                fontSize="lg"
+                fontSize="md"
                 textTransform="uppercase"
                 fontWeight="normal"
-                as="kbd"
                 letterSpacing={2}
                 color="purple.600"
-                href={"/"}
+                href="/"
               >
                 Home
               </Link>
               <Link
                 px={2}
                 py={1}
-                fontSize="lg"
+                fontSize="md"
                 textTransform="uppercase"
                 fontWeight="normal"
-                as="kbd"
                 letterSpacing={2}
                 color="purple.600"
                 href={"sell"}
@@ -165,28 +159,26 @@ export default function withAction() {
               <Link
                 px={2}
                 py={1}
-                fontSize="lg"
+                fontSize="md"
                 textTransform="uppercase"
                 fontWeight="normal"
-                as="kbd"
                 letterSpacing={2}
                 color="purple.600"
-                href={"collections"}
+                href={"collection"}
               >
                 Collectibles
               </Link>
               <Link
                 px={2}
                 py={1}
-                fontSize="lg"
+                fontSize="md"
                 textTransform="uppercase"
                 fontWeight="normal"
-                as="kbd"
                 letterSpacing={3}
                 color="purple.600"
-                href={"dashboard"}
+                href={"myassets"}
               >
-                Dashboard
+                My Assets
               </Link>
             </Stack>
           </Box>
