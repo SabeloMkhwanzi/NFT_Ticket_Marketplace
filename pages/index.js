@@ -15,9 +15,21 @@ import {
   Button,
   Heading,
   Text,
+  Stack,
+  Divider,
+  chakra,
+  Icon,
+  Avatar,
 } from "@chakra-ui/react";
-import PillPity from "pill-pity";
+
+import { MdOutlineSell } from "react-icons/md";
+import { GiCrossedChains, GiReceiveMoney } from "react-icons/gi";
+import { VscSymbolNumeric } from "react-icons/vsc";
+
 import Head from "next/head";
+
+import { GiTicket } from "react-icons/gi";
+import PillPity from "pill-pity";
 
 import { nftaddress, nftmarketaddress } from "../config";
 import NFT from "../artifacts/contracts/NFT.sol/NFT.json";
@@ -27,6 +39,10 @@ import Hero from "../components/hero.tsx";
 
 export default function Home() {
   const BodyBgColor = useColorModeValue("#FFF8D5", "gray.600");
+  const TextCardColorMode = useColorModeValue("gray.800", "white");
+  const ButtonTextColor = useColorModeValue("white", "black");
+  const ButtonColorMode = useColorModeValue("#8479E1", "#8479E1");
+
   const [nfts, setNfts] = useState([]);
   const [loadingState, setLoadingState] = useState("not-loaded");
   useEffect(() => {
@@ -90,6 +106,13 @@ export default function Home() {
     loadNFTs();
   }
 
+  const getEllipsisTxt = (str, n = 6) => {
+    if (str) {
+      return `${str.slice(0, n)}...${str.slice(str.length - n)}`;
+    }
+    return "";
+  };
+
   if (loadingState === "loaded" && !nfts.length)
     return <h1>No items in Marketplace!</h1>;
 
@@ -98,11 +121,12 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>TicketVast</title>
+        <title>TicketVast - NFT Ticket MarketPlace</title>
       </Head>
       <>
         <Hero />
-        <PillPity pattern="glamorous" width="100%" bg={BodyBgColor}>
+
+        <Box pattern="glamorous" width="100%" bg={BodyBgColor}>
           <Heading
             fontSize={{ base: "3xl", md: "4xl", lg: "5xl" }}
             color={useColorModeValue("gray.800", "white")}
@@ -110,10 +134,18 @@ export default function Home() {
             align="center"
             pt="10"
           >
-            <Text color={"purple.400"}>MarketPlace</Text>{" "}
+            <Stack direction="row" justifyContent="center">
+              <Text fontFamily="cursive" color="black" as="span">
+                Ticket
+              </Text>
+              <GiTicket size="2.5rem" />{" "}
+              <Text fontFamily="cursive" color="#733C3C" as="span">
+                MarketPlace
+              </Text>{" "}
+            </Stack>
           </Heading>
 
-          <SimpleGrid columns={[1, null, 3]} spacingX="10px" spacingY="10px">
+          <SimpleGrid columns={[1, null, 4]} spacingX={4} spacingY={4}>
             {nfts.map((nft, i) => (
               <Flex
                 key={i}
@@ -123,77 +155,136 @@ export default function Home() {
                 justifyContent="center"
               >
                 <Box
+                  p={5}
+                  w="sm"
+                  mx="auto"
                   bg={useColorModeValue("white", "gray.800")}
-                  maxW="sm"
-                  borderWidth="1px"
-                  rounded="lg"
                   shadow="lg"
-                  position="relative"
+                  rounded="xl"
+                  overflow="hidden"
                 >
                   <Image
+                    borderRadius="xl"
+                    w="full"
+                    h={56}
+                    fit="cover"
+                    objectPosition="center"
                     src={nft.image}
                     alt={`Picture of ${nft.name}`}
-                    roundedTop="lg"
-                    boxSize="350px"
-                    objectFit="cover"
-                    width="100%"
-                    maxHeight="100%"
                   />
 
-                  <Box p="6">
-                    <Flex
-                      mt="1"
-                      justifyContent="space-between"
-                      alignContent="center"
+                  <Box py={4} px={6}>
+                    <chakra.h1
+                      fontSize="xl"
+                      fontWeight="bold"
+                      fontFamily="cursive"
+                      color={TextCardColorMode}
                     >
-                      <Box
-                        fontSize="lg"
-                        fontWeight="bold"
-                        as="h4"
-                        lineHeight="tight"
-                        isTruncated
+                      {nft.name}
+                    </chakra.h1>
+
+                    <chakra.p
+                      letterSpacing={2}
+                      fontWeight="normal"
+                      fontFamily="fantasy"
+                      py={2}
+                      color={"gray.600"}
+                    >
+                      {nft.description}
+                    </chakra.p>
+
+                    <Flex alignItems="center" mt={4} color={TextCardColorMode}>
+                      <Icon as={MdOutlineSell} h={6} w={6} mr={2} />
+                      <Stack direction="row">
+                        <chakra.h1
+                          fontSize="md"
+                          color={TextCardColorMode}
+                          fontFamily="monospace"
+                        >
+                          {nft.price} {""}
+                        </chakra.h1>
+                        <Text
+                          fontFamily="monospace"
+                          fontWeight="bold"
+                          fontSize="md"
+                          color={TextCardColorMode}
+                        >
+                          {" "}
+                          Matic
+                        </Text>
+                      </Stack>
+                    </Flex>
+
+                    <Flex alignItems="center" mt={4} color={TextCardColorMode}>
+                      <Icon as={VscSymbolNumeric} h={6} w={6} mr={2} />
+
+                      <chakra.h1
+                        fontSize="sm"
+                        color={TextCardColorMode}
+                        fontFamily="monospace"
                       >
-                        {nft.name}
-                      </Box>
+                        Ticket Id: {nft.tokenId}
+                      </chakra.h1>
+                    </Flex>
+
+                    <Flex alignItems="center" mt={4} color={TextCardColorMode}>
+                      {/* <Icon as={GiReceiveMoney} h={6} w={6} mr={2} /> */}
+                      <Text fontSize="sm" fontFamily="monospace" pr={2}>
+                        Seller:{" "}
+                      </Text>
+
+                      <chakra.h1
+                        fontSize="sm"
+                        color="blue.500"
+                        fontFamily="monospace"
+                      >
+                        {getEllipsisTxt(nft.seller)}
+                      </chakra.h1>
+                    </Flex>
+
+                    <Flex
+                      alignItems="center"
+                      mt={4}
+                      color={useColorModeValue("gray.700", "gray.200")}
+                    >
+                      {/* <Icon as={GiCrossedChains} h={6} w={6} mr={2} /> */}
+                      <Avatar
+                        size="sm"
+                        src="https://d2wsuxmhzdmk4i.cloudfront.net/matic-network.png"
+                      />
+                      <chakra.h1
+                        fontFamily="monospace"
+                        px={2}
+                        fontSize="sm"
+                        color={TextCardColorMode}
+                      >
+                        Polygon Network
+                      </chakra.h1>
+                    </Flex>
+                    <Flex alignItems="center" mt={4} color={TextCardColorMode}>
                       <Button
-                        bg="purple.400"
-                        size="md"
+                        textColor={ButtonTextColor}
+                        borderRadius="lg"
+                        borderColor="gray.500"
+                        bgColor={ButtonColorMode}
+                        shadow="lg"
+                        fontSize="m"
+                        textTransform="uppercase"
+                        fontWeight="normal"
+                        as="kbd"
+                        letterSpacing={1}
+                        width="full"
                         onClick={() => buyNft(nft)}
                       >
                         Buy
                       </Button>
-                    </Flex>
-                    <Flex justifyContent="space-between" alignContent="center">
-                      <Box
-                        fontSize="1xl"
-                        fontWeight="semibold"
-                        color={useColorModeValue("gray.800", "white")}
-                      >
-                        {nft.description}
-                      </Box>
-                    </Flex>
-                    <Flex justifyContent="space-between" alignContent="center">
-                      <Box
-                        fontSize="2xl"
-                        color={useColorModeValue("gray.800", "white")}
-                      >
-                        <Box
-                          as="span"
-                          color={"gray.600"}
-                          fontSize="lg"
-                          pl="250"
-                        >
-                          Matic
-                        </Box>
-                        {nft.price}
-                      </Box>
                     </Flex>
                   </Box>
                 </Box>
               </Flex>
             ))}
           </SimpleGrid>
-        </PillPity>
+        </Box>
       </>
     </>
   );

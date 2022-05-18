@@ -5,7 +5,6 @@ import {
   Flex,
   HStack,
   Link,
-  Button,
   useDisclosure,
   Stack,
   Text,
@@ -100,7 +99,7 @@ export default function withAction() {
                   letterSpacing={1}
                   href={"sell"}
                 >
-                  Mint Tickets
+                  Create Tickets
                 </Link>
                 <Link
                   py={3}
@@ -161,7 +160,7 @@ export default function withAction() {
                 color="purple.600"
                 href={"sell"}
               >
-                Sell Ticket
+                Create Ticket
               </Link>
               <Link
                 px={2}

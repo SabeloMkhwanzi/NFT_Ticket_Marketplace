@@ -55,7 +55,7 @@ export default function SplitScreen() {
             color={SubHeaderTextColor}
           >
             Discover the best innovative decentralized NFT Ticketing
-            MarketPlace. In this platform you will mint your Tickets for any
+            MarketPlace. In this platform you will create your Tickets for any
             event on the blockchain, Store it using IPFS and sell via SMART
             CONTRACT.
           </Text>
@@ -72,7 +72,7 @@ export default function SplitScreen() {
               letterSpacing={2}
               textDecoration="none"
             >
-              <Link href={"sell"}>Mint Tickets</Link>
+              <Link href={"sell"}>Create Tickets</Link>
             </Button>
             <ButtonConnect />
           </Stack>
