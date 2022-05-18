@@ -47,7 +47,13 @@ export default function SmallCentered() {
   const BodyBgColor = useColorModeValue("#FFF8D5", "gray.600");
 
   return (
-    <Box bg={BodyBgColor} color={useColorModeValue("gray.700", "gray.200")}>
+    <Box
+      borderTopWidth={3}
+      borderStyle={"solid"}
+      borderColor={useColorModeValue("purple.200", "")}
+      bg={BodyBgColor}
+      color={useColorModeValue("gray.700", "gray.200")}
+    >
       <Container
         as={Stack}
         maxW={"6xl"}
@@ -58,29 +64,56 @@ export default function SmallCentered() {
       >
         <Stack direction={"row"} spacing={6}>
           <Link
-            colorScheme="purple.400"
-            variant="ghost"
-            fontWeight="bold"
+            fontSize="lg"
+            textTransform="uppercase"
+            fontWeight="normal"
+            as="kbd"
+            letterSpacing={2}
+            color={useColorModeValue("purple.600", "white")}
             href={"/"}
           >
             Home
           </Link>
-          <Link fontWeight="bold" href={"sell"}>
+          <Link
+            fontSize="lg"
+            textTransform="uppercase"
+            fontWeight="normal"
+            as="kbd"
+            letterSpacing={2}
+            color={useColorModeValue("purple.600", "white")}
+            href={"sell"}
+          >
             Sell Tickets
           </Link>
-          <Link fontWeight="bold" href={"collections"}>
+          <Link
+            fontSize="lg"
+            textTransform="uppercase"
+            fontWeight="normal"
+            as="kbd"
+            letterSpacing={2}
+            color={useColorModeValue("purple.600", "white")}
+            href={"collections"}
+          >
             Collectibles
           </Link>
-          <Link fontWeight="bold" href={"dashboard"}>
+          <Link
+            fontSize="lg"
+            textTransform="uppercase"
+            fontWeight="normal"
+            as="kbd"
+            letterSpacing={2}
+            color={useColorModeValue("purple.600", "white")}
+            href={"dashboard"}
+          >
             Dashboard
           </Link>
         </Stack>
       </Container>
 
       <Box
-        borderTopWidth={1}
+        borderTopWidth={2}
         borderStyle={"solid"}
-        borderColor={useColorModeValue("purple.200", "purple.700")}
+        borderColor={useColorModeValue("purple.100", "")}
       >
         <Container
           as={Stack}
@@ -91,7 +124,16 @@ export default function SmallCentered() {
           justify={{ base: "center", md: "space-between" }}
           align={{ base: "center", md: "center" }}
         >
-          <Text>© 2021 Made with ❤ by Sabelo</Text>
+          <Text
+            fontSize="lg"
+            textTransform="uppercase"
+            fontWeight="normal"
+            as="kbd"
+            letterSpacing={2}
+            color={useColorModeValue("purple.600", "white")}
+          >
+            © 2022 Made with ❤ by Sabelo
+          </Text>
           <Stack direction={"row"} spacing={6}>
             <SocialButton
               label={"Twitter"}
