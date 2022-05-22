@@ -75,7 +75,12 @@ export default function withAction() {
               spacing={4}
               display={{ base: "none", md: "flex" }}
             >
-              <Stack direction={"row"} spacing={12} ml="60%">
+              <Stack
+                direction={"row"}
+                spacing={12}
+                justify={"center"}
+                align={"center"}
+              >
                 <Link
                   py={3}
                   fontSize="md"

@@ -103,9 +103,9 @@ export default function SmallCentered() {
             as="kbd"
             letterSpacing={2}
             color={useColorModeValue("purple.600", "white")}
-            href={"dashboard"}
+            href={"myassets"}
           >
-            Dashboard
+            My Assets
           </Link>
         </Stack>
       </Container>
