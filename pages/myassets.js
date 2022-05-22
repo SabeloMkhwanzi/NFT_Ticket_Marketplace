@@ -21,8 +21,8 @@ import Head from "next/head";
 
 import { nftmarketaddress, nftaddress } from "../config";
 
-import Market from "../artifacts/contracts/NFTMarket.sol/NFTMarket.json";
-import NFT from "../artifacts/contracts/NFT.sol/NFT.json";
+import Market from "../utils/NFTMarket.json";
+import NFT from "../utils/NFT.json";
 
 export default function CreatorDashboard() {
   const BodyBgColor = useColorModeValue("#FFF8D5", "gray.600");

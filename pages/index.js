@@ -17,19 +17,14 @@ import {
   Icon,
   Avatar,
 } from "@chakra-ui/react";
-
-import { MdOutlineSell } from "react-icons/md";
-import { GiCrossedChains, GiReceiveMoney } from "react-icons/gi";
-import { VscSymbolNumeric } from "react-icons/vsc";
-
 import Head from "next/head";
-
+import { MdOutlineSell } from "react-icons/md";
+import { VscSymbolNumeric } from "react-icons/vsc";
 import { GiTicket } from "react-icons/gi";
-import PillPity from "pill-pity";
-
 import { nftaddress, nftmarketaddress } from "../config";
-import NFT from "../artifacts/contracts/NFT.sol/NFT.json";
-import Market from "../artifacts/contracts/NFTMarket.sol/NFTMarket.json";
+
+import NFT from "../utils/NFT.json";
+import Market from "../utils/NFTMarket.json";
 
 import Hero from "../components/hero.tsx";
 
