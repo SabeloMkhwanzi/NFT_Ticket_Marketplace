@@ -1,9 +1,5 @@
 ## L2 ROLLATHON - Best use of IPFS and/or Filecoin in your L2 project
 
-#### Basic Sample Hardhat Setup
-
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, a sample script that deploys that contract, and an example of a task implementation, which simply lists the available accounts.
-
 ### Challenge Description
 #### Projects that use IPFS for content-addressing and/or Filecoin for decentralized, persistent storage. (Submissions that use either technology indirectly via NFT.storage, web3.storage, Estuary.tech, Textile, or other tooling also qualify). All types of projects are welcome and we welcome your creativity. Feel free to browse past winners here for inspiration.
 
@@ -26,12 +22,15 @@ In the ticketing system, event organizers can mint the required number of NFT ti
 
 - Building Framework: [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
 - Frontend: [Chakra-ui](https://chakra-ui.com/) - Create accessible React apps with speed
-- Smart Contract Framework: [Hardhat]() - 
-- Nft Storage: [IFPF/Filecoin]() - 
-- Blockchain: [Polygon Test]() - .
+- Smart Contract Framework: [Hardhat](https://hardhat.org/getting-started/) - Hardhat is a development environment to compile, deploy, test, and debug your Ethereum software.
+- Nft Storage: [IFPF/Filecoin](https://docs.ipfs.io/concepts/how-ipfs-works/) - A peer-to-peer hypermedia protocol designed to preserve and grow humanity's knowledge
+by making the web upgradeable, resilient, and more open.
+- Blockchain: [Polygon Test](https://polygon.technology/) - Polygon believes in Web3 for all. Polygon is a decentralised Ethereum scaling platform that enables developers to build scalable user-friendly dApps with low transaction fees without ever sacrificing on security..
 - IPFS gateway: [Infura](https://docs.infura.io/infura/networks/ethereum) - guide on how to use the most versatile blockchain developer platform.
 - Wallet connection: [Wagmi](https://wagmi-xyz.vercel.app/) - is a React Hooks library for Ethereum, built on ethers.js.
-- Hosting platform: [Fleek.co]() - 
+- Hosting platform: [Vercel](https://vercel.com/home) - ercel combines the best developer experience with an obsessive focus on end-user performance.
+Our platform enables frontend teams to do their best work.
+- Hosting platform: [fleek.io](https://app.fleek.co/) - Fleek is everything you need to host fast, modern sites & apps on IPFS. All in one seamless workflow.
 
 ### Project Feature
 
@@ -42,15 +41,15 @@ In the ticketing system, event organizers can mint the required number of NFT ti
 
 ##### 1. Home Page
 
-![HomePage]()
+![HomePage](https://github.com/SabeloMkhwanzi/NFT_Ticket_Marketplace/blob/main/public/TicketVast-NFT-MakerPlace-HomePage1.jpg)
 
-#### Live website: [TicketVast]()
+#### Live website: [TicketVast](https://ticketvastnft.vercel.app/)
 
 #### GitHub Repository: [github.com/SabeloMkhwanazi](https://github.com/SabeloMkhwanzi/NFT_Ticket_Marketplac)
 
 #### Demo video: [video]()
 
-#### Project Start: Date: 13 May, 2022
+#### Project Start: Date: 13 -22 May, 2022
 
 #### Wallet Address : 0xF975206a46b4eD9f5F008AF9813B19bf083d94eE
 
