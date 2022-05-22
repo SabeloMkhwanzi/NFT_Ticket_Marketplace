@@ -147,9 +147,6 @@ export default function SmallCentered() {
             >
               <FaGithub />
             </SocialButton>
-            {/* <SocialButton label={'Linkdeni'} href={'https://www.linkedin.com/in/sabelo-mkhwanazi-54ba431b1/'}>
-              <FaLinkedinIn />
-            </SocialButton> */}
           </Stack>
         </Container>
       </Box>

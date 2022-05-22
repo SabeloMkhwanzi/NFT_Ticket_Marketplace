@@ -1,6 +1,3 @@
-/* eslint-disable react-hooks/rules-of-hooks */
-/* eslint-disable @next/next/no-img-element */
-/* eslint-disable jsx-a11y/alt-text */
 import { ethers } from "ethers";
 import { useEffect, useState } from "react";
 import axios from "axios";
@@ -29,6 +26,10 @@ import NFT from "../artifacts/contracts/NFT.sol/NFT.json";
 
 export default function CreatorDashboard() {
   const BodyBgColor = useColorModeValue("#FFF8D5", "gray.600");
+  const CollheaderColor = useColorModeValue("gray.800", "white");
+  const bgColor = useColorModeValue("white", "gray.800");
+  const Fontcolor = useColorModeValue("gray.700", "gray.200");
+  const Textcolor = useColorModeValue("gray.800", "black");
 
   const [nfts, setNfts] = useState([]);
   const [sold, setSold] = useState([]);
@@ -100,7 +101,7 @@ export default function CreatorDashboard() {
       <Box minH={"80vh"} pattern="glamorous" width="100%" bg={BodyBgColor}>
         <Heading
           fontSize={{ base: "3xl", md: "4xl", lg: "5xl" }}
-          color={useColorModeValue("gray.800", "white")}
+          color={CollheaderColor}
           justify="center"
           align="center"
           pt="10"
@@ -121,7 +122,7 @@ export default function CreatorDashboard() {
                 p={5}
                 w="sm"
                 mx="auto"
-                bg={useColorModeValue("white", "gray.800")}
+                bg={bgColor}
                 shadow="lg"
                 rounded="xl"
                 overflow="hidden"
@@ -205,11 +206,7 @@ export default function CreatorDashboard() {
                     </chakra.h1>
                   </Flex>
 
-                  <Flex
-                    alignItems="center"
-                    mt={4}
-                    color={useColorModeValue("gray.700", "gray.200")}
-                  >
+                  <Flex alignItems="center" mt={4} color={Fontcolor}>
                     {/* <Icon as={GiCrossedChains} h={6} w={6} mr={2} /> */}
                     <Avatar
                       size="sm"
@@ -235,7 +232,7 @@ export default function CreatorDashboard() {
           <>
             <Heading
               fontSize={{ base: "2xl", md: "3xl", lg: "2xl" }}
-              color={useColorModeValue("gray.800", "black")}
+              color={Textcolor}
               justify="center"
               align="center"
               pt="10"
@@ -256,7 +253,7 @@ export default function CreatorDashboard() {
                     p={5}
                     w="sm"
                     mx="auto"
-                    bg={useColorModeValue("white", "gray.800")}
+                    bg={bgColor}
                     shadow="lg"
                     rounded="xl"
                     overflow="hidden"
@@ -352,11 +349,7 @@ export default function CreatorDashboard() {
                         </chakra.h1>
                       </Flex>
 
-                      <Flex
-                        alignItems="center"
-                        mt={4}
-                        color={useColorModeValue("gray.700", "gray.200")}
-                      >
+                      <Flex alignItems="center" mt={4} color={Fontcolor}>
                         {/* <Icon as={GiCrossedChains} h={6} w={6} mr={2} /> */}
                         <Avatar
                           size="sm"

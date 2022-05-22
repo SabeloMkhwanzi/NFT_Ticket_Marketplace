@@ -1,6 +1,3 @@
-/* eslint-disable react/jsx-no-undef */
-/* eslint-disable jsx-a11y/alt-text */
-/* eslint-disable @next/next/no-img-element */
 import { useState } from "react";
 import { useRouter } from "next/router";
 import { ethers } from "ethers";
@@ -220,6 +217,7 @@ export default function CreateItem() {
                   onChange={onChange}
                 />
                 {fileUrl && (
+                  // eslint-disable-next-line jsx-a11y/alt-text
                   <Image
                     src={fileUrl}
                     roundedTop="lg"

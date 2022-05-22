@@ -1,7 +1,3 @@
-/* eslint-disable react/jsx-no-duplicate-props */
-/* eslint-disable react-hooks/rules-of-hooks */
-/* eslint-disable jsx-a11y/alt-text */
-/* eslint-disable @next/next/no-img-element */
 import { ethers } from "ethers";
 import { useEffect, useState } from "react";
 import axios from "axios";
@@ -42,6 +38,9 @@ export default function Home() {
   const TextCardColorMode = useColorModeValue("gray.800", "white");
   const ButtonTextColor = useColorModeValue("white", "black");
   const ButtonColorMode = useColorModeValue("#8479E1", "#8479E1");
+  const CollheaderColor = useColorModeValue("gray.800", "white");
+  const bgColor = useColorModeValue("white", "gray.800");
+  const Fontcolor = useColorModeValue("gray.700", "gray.200");
 
   const [nfts, setNfts] = useState([]);
   const [loadingState, setLoadingState] = useState("not-loaded");
@@ -129,7 +128,7 @@ export default function Home() {
         <Box pattern="glamorous" width="100%" bg={BodyBgColor}>
           <Heading
             fontSize={{ base: "3xl", md: "4xl", lg: "5xl" }}
-            color={useColorModeValue("gray.800", "white")}
+            color={CollheaderColor}
             justify="center"
             align="center"
             pt="10"
@@ -158,7 +157,7 @@ export default function Home() {
                   p={5}
                   w="sm"
                   mx="auto"
-                  bg={useColorModeValue("white", "gray.800")}
+                  bg={bgColor}
                   shadow="lg"
                   rounded="xl"
                   overflow="hidden"
@@ -242,11 +241,7 @@ export default function Home() {
                       </chakra.h1>
                     </Flex>
 
-                    <Flex
-                      alignItems="center"
-                      mt={4}
-                      color={useColorModeValue("gray.700", "gray.200")}
-                    >
+                    <Flex alignItems="center" mt={4} color={Fontcolor}>
                       {/* <Icon as={GiCrossedChains} h={6} w={6} mr={2} /> */}
                       <Avatar
                         size="sm"
