@@ -9,7 +9,7 @@
 
 ### Project Description
 
-- The NFT Ticketing Marketplace upload the ticket on the IPFS. Hash is calculated by IPFS and tickets get stored on the database. NFT tickets are created and uploaded to the requested NFT marketplace.
+- The NFT Ticketing Marketplace uploads the ticket on the IPFS. Hash is calculated by IPFS and tickets get stored in the database. NFT tickets are created and uploaded to the requested NFT marketplace.
 
 - Ticket owners can also resell NFT tickets on the NFT marketplace. The ticket is stored in a smart contract. Once a buyer buys the ticket, the smart contract triggers and the payment is sent to the seller automatically..
 
@@ -47,7 +47,7 @@ Our platform enables frontend teams to do their best work.
 
 #### GitHub Repository: [github.com/SabeloMkhwanazi](https://github.com/SabeloMkhwanzi/NFT_Ticket_Marketplac)
 
-#### Demo video: [video]()
+#### Demo video: [video](https://youtu.be/3bbp0VC-MlM)
 
 #### Project Start: Date: 13 -22 May, 2022
 
