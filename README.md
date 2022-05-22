@@ -23,7 +23,7 @@ In the ticketing system, event organizers can mint the required number of NFT ti
 - Building Framework: [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
 - Frontend: [Chakra-ui](https://chakra-ui.com/) - Create accessible React apps with speed
 - Smart Contract Framework: [Hardhat](https://hardhat.org/getting-started/) - Hardhat is a development environment to compile, deploy, test, and debug your Ethereum software.
-- Nft Storage: [IFPF/Filecoin](https://docs.ipfs.io/concepts/how-ipfs-works/) - A peer-to-peer hypermedia protocol designed to preserve and grow humanity's knowledge
+- Nft Storage: [IPFS/Filecoin](https://docs.ipfs.io/concepts/how-ipfs-works/) - A peer-to-peer hypermedia protocol designed to preserve and grow humanity's knowledge
 by making the web upgradeable, resilient, and more open.
 - Blockchain: [Polygon Test](https://polygon.technology/) - Polygon believes in Web3 for all. Polygon is a decentralised Ethereum scaling platform that enables developers to build scalable user-friendly dApps with low transaction fees without ever sacrificing on security..
 - IPFS gateway: [Infura](https://docs.infura.io/infura/networks/ethereum) - guide on how to use the most versatile blockchain developer platform.
