@@ -28,7 +28,7 @@ by making the web upgradeable, resilient, and more open.
 - Blockchain: [Polygon Test](https://polygon.technology/) - Polygon believes in Web3 for all. Polygon is a decentralised Ethereum scaling platform that enables developers to build scalable user-friendly dApps with low transaction fees without ever sacrificing on security..
 - IPFS gateway: [Infura](https://docs.infura.io/infura/networks/ethereum) - guide on how to use the most versatile blockchain developer platform.
 - Wallet connection: [Wagmi](https://wagmi-xyz.vercel.app/) - is a React Hooks library for Ethereum, built on ethers.js.
-- Hosting platform: [Vercel](https://vercel.com/home) - ercel combines the best developer experience with an obsessive focus on end-user performance.
+- Hosting platform: [Vercel](https://vercel.com/home) - Vercel combines the best developer experience with an obsessive focus on end-user performance.
 Our platform enables frontend teams to do their best work.
 - Hosting platform: [fleek.io](https://app.fleek.co/) - Fleek is everything you need to host fast, modern sites & apps on IPFS. All in one seamless workflow.
 
