@@ -16,7 +16,6 @@ import {
   Avatar,
   Stack,
 } from "@chakra-ui/react";
-import PillPity from "pill-pity";
 import Head from "next/head";
 
 import { nftmarketaddress, nftaddress } from "../config";
