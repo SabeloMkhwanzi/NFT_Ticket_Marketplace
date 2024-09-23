@@ -43,16 +43,6 @@ Our platform enables frontend teams to do their best work.
 
 ![HomePage](https://github.com/SabeloMkhwanzi/NFT_Ticket_Marketplace/blob/main/public/TicketVast-NFT-MakerPlace-HomePage1.jpg)
 
-#### Live website: [TicketVast](https://ticketvastnft.vercel.app/)
-
-#### GitHub Repository: [github.com/SabeloMkhwanazi](https://github.com/SabeloMkhwanzi/NFT_Ticket_Marketplac)
-
-#### Demo video: [video](https://youtu.be/3bbp0VC-MlM)
-
-#### Project Start: Date: 13 -22 May, 2022
-
-#### Wallet Address : 0xF975206a46b4eD9f5F008AF9813B19bf083d94eE
-
 #### Basic Sample Hardhat Setup
 
 This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, a sample script that deploys that contract, and an example of a task implementation, which simply lists the available accounts.
